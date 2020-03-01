@@ -66,7 +66,7 @@ fn main() {
             }
             nums.push(spawn_and_measure(*a, *b).as_nanos());
         }
-        let nums: Vec<_> = nums.into_iter().map(|duration| format!("{:?}", duration / (REPS_PER_ROUND as u128 * 2))).collect();
+        let nums: Vec<_> = nums.into_iter().map(|duration| format!("{:3.1}", duration as f64 / (REPS_PER_ROUND as f64))).collect();
         println!("{}", nums.join(","));
     }
 }
